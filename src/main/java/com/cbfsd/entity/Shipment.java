@@ -2,10 +2,15 @@ package com.cbfsd.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Shipment {
 
 	
-	
+	@Id
 	private int shipmentId;
 	
 

@@ -1,7 +1,13 @@
 package com.cbfsd.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Wishlist {
 
+	
+	@Id
 	private int wishListId;
 
 	

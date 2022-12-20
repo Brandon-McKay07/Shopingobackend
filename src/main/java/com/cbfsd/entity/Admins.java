@@ -1,9 +1,17 @@
 package com.cbfsd.entity;
 
+
+
 import java.util.Date;
 
-public class Admins {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+
+@Entity
+public class Admins {
+	@Id
 	private int adminId;
 	private Date addedOn;
 	private String email;

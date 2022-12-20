@@ -3,9 +3,15 @@ package com.cbfsd.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Category {
 
-	
+	@Id
 	private int categoryId;
 
 	private boolean active;

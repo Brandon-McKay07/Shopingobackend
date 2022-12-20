@@ -1,8 +1,12 @@
 package com.cbfsd.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Orderitem {
 
-	
+	@Id
 	private int orderItemId;
 
 	private int price;
