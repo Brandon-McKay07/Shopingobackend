@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -14,9 +15,10 @@ public class User {
 	
 
 	@Id
+	@Column(name = "userids")
 	private int userId;
 
-	
+	@Column(name = "addedon")
 	private Date addedOn;
 
 	private String city;
@@ -27,6 +29,8 @@ public class User {
 
 	private String email;
 	
+	
+	@Column(name = "fullname")
 	private String fullName;
 
 	private String image;
@@ -45,8 +49,8 @@ public class User {
 	
 	private List<Order> orders;
 
-	
-	private List<Wishlist> whishlists;
+
+	private List<Wishlist> wishlists;
 
 
 	public User() {
@@ -195,13 +199,13 @@ public class User {
 	}
 
 
-	public List<Wishlist> getWhishlists() {
-		return whishlists;
+	public List<Wishlist> getWishlists() {
+		return wishlists;
 	}
 
 
-	public void setWhishlists(List<Wishlist> whishlists) {
-		this.whishlists = whishlists;
+	public void setWishlists(List<Wishlist> wishlists) {
+		this.wishlists = wishlists;
 	}
 
 
@@ -210,7 +214,7 @@ public class User {
 		return "User [userId=" + userId + ", addedOn=" + addedOn + ", city=" + city + ", contact=" + contact
 				+ ", country=" + country + ", email=" + email + ", fullName=" + fullName + ", image=" + image
 				+ ", password=" + password + ", pincode=" + pincode + ", state=" + state + ", street=" + street
-				+ ", carts=" + carts + ", orders=" + orders + ", whishlists=" + whishlists + "]";
+				+ ", carts=" + carts + ", orders=" + orders + ", whishlists=" + wishlists + "]";
 	}
 	
 	

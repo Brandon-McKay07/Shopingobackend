@@ -1,7 +1,10 @@
 package com.cbfsd.entity;
 
-import java.util.Date;
 
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,20 +14,31 @@ public class Shipment {
 
 	
 	@Id
+	@Column(name = "shipmentid")
 	private int shipmentId;
 	
 
-	private Date expectedDeliveryDate;
+	@Column(name = "expecteddeliverydate")
+	private LocalDate expectedDeliveryDate;
 
+	
+	@Column(name = "shipmentcompany")
 	private String shipmentCompany;
 
-
-	private Date shipmentDate;
 	
+	@Column(name = "shipmentdate")
+	private LocalDate shipmentDate;
+	
+	
+	@Column(name = "shipmentmethod")
 	private String shipmentMethod;
 	
+	
+	@Column(name = "shipmentstatus")
 	private int shipmentStatus;
 
+	
+	@Column(name = "shipmenttitle")
 	private String shipmentTitle;
 
 	
@@ -37,7 +51,7 @@ public class Shipment {
 	}
 
 
-	public Shipment(int shipmentId, Date expectedDeliveryDate, String shipmentCompany, Date shipmentDate,
+	public Shipment(int shipmentId, LocalDate expectedDeliveryDate, String shipmentCompany, LocalDate shipmentDate,
 			String shipmentMethod, int shipmentStatus, String shipmentTitle, Order order) {
 		super();
 		this.shipmentId = shipmentId;
@@ -61,12 +75,12 @@ public class Shipment {
 	}
 
 
-	public Date getExpectedDeliveryDate() {
+	public LocalDate getExpectedDeliveryDate() {
 		return expectedDeliveryDate;
 	}
 
 
-	public void setExpectedDeliveryDate(Date expectedDeliveryDate) {
+	public void setExpectedDeliveryDate(LocalDate expectedDeliveryDate) {
 		this.expectedDeliveryDate = expectedDeliveryDate;
 	}
 
@@ -81,12 +95,12 @@ public class Shipment {
 	}
 
 
-	public Date getShipmentDate() {
+	public LocalDate getShipmentDate() {
 		return shipmentDate;
 	}
 
 
-	public void setShipmentDate(Date shipmentDate) {
+	public void setShipmentDate(LocalDate shipmentDate) {
 		this.shipmentDate = shipmentDate;
 	}
 

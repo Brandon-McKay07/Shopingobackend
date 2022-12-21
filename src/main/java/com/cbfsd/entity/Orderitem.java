@@ -1,5 +1,6 @@
 package com.cbfsd.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,21 +8,26 @@ import javax.persistence.Id;
 public class Orderitem {
 
 	@Id
+	@Column(name = "orderitemid")
 	private int orderItemId;
 
 	private int price;
 
+	@Column(name = "productcategory")
 	private String productCategory;
 
+	@Column(name = "productcode")
 	private String productCode;
 
+	@Column(name = "productdescription")
 	private String productDescription;
 
-
+	@Column(name = "producttitle")
 	private String productTitle;
 
 	private int quantity;
 
+	@Column(name = "totalprice")
 	private int totalPrice;
 
 

@@ -2,8 +2,9 @@ package com.cbfsd.entity;
 
 
 
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,12 +13,14 @@ import javax.persistence.Id;
 @Entity
 public class Admins {
 	@Id
+	@Column(name = "adminid")
 	private int adminId;
-	private Date addedOn;
+	@Column(name = "addedon")
+	private LocalDate addedOn;
 	private String email;
-
+	@Column(name = "fullname")
 	private String fullName;
-	
+	@Column(name = "logintype")
 	private int loginType;
 
 	private String password;
@@ -31,7 +34,7 @@ public class Admins {
 
 
 
-	public Admins(int adminId, Date addedOn, String email, String fullName, int loginType, String password) {
+	public Admins(int adminId, LocalDate addedOn, String email, String fullName, int loginType, String password) {
 		super();
 		this.adminId = adminId;
 		this.addedOn = addedOn;
@@ -55,13 +58,13 @@ public class Admins {
 
 
 
-	public Date getAddedOn() {
+	public LocalDate getAddedOn() {
 		return addedOn;
 	}
 
 
 
-	public void setAddedOn(Date addedOn) {
+	public void setAddedOn(LocalDate addedOn) {
 		this.addedOn = addedOn;
 	}
 

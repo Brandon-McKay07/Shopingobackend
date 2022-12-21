@@ -1,9 +1,11 @@
 package com.cbfsd.entity;
 
+import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
+
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -13,10 +15,13 @@ import javax.persistence.Id;
 public class Product {
 
 	@Id
+	
+	@Column(name = "productid")
 	private int productId;
 
 
-	private Date addedOn;
+	@Column(name = "addedon")
+	private LocalDate addedOn;
 
 	
 
@@ -24,14 +29,21 @@ public class Product {
 
 	private int price;
 
+	@Column(name = "productcode")
 	private String productCode;
 
+	
+	@Column(name = "productdescription")
 	private String productDescription;
 	
+	
+	@Column(name = "producttitle")
 	private String productTitle;
 
 	private int rating;
 	
+	
+	@Column(name = "thumbnailimage")
 	private int thumbnailImage;
 
 	
@@ -50,7 +62,7 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int productId, Date addedOn, String[] images, int price, String productCode,
+	public Product(int productId, LocalDate addedOn, String[] images, int price, String productCode,
 			String productDescription, String productTitle, int rating, int thumbnailImage, List<Cart> carts,
 			List<Orderitem> orderitems, Category category, List<Wishlist> whishlists) {
 		super();
@@ -77,11 +89,11 @@ public class Product {
 		this.productId = productId;
 	}
 
-	public Date getAddedOn() {
+	public LocalDate getAddedOn() {
 		return addedOn;
 	}
 
-	public void setAddedOn(Date addedOn) {
+	public void setAddedOn(LocalDate addedOn) {
 		this.addedOn = addedOn;
 	}
 

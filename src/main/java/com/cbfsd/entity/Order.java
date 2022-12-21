@@ -1,8 +1,9 @@
 package com.cbfsd.entity;
 
 import java.math.BigInteger;
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 public class Order {
 
 	@Id
+	@Column(name = "adminid")
 	private int orderId;
 
 	private String address;
@@ -19,27 +21,37 @@ public class Order {
 
 	private String email;
 
+	@Column(name = "itemsubtotal")
 	private int itemsSubTotal;
 
 	private String name;
 
-	
-	private Date orderDate;
+	@Column(name = "orderdate")
+	private LocalDate orderDate;
 
+	@Column(name = "orderstatus")
 	private String orderStatus;
 
+	@Column(name = "paymentmethod")
 	private int paymentMethod;
 	
+	
+	@Column(name = "paymentmethodtitle")
 	private String paymentMethodTitle;
 
+	@Column(name = "paymentstatus")
 	private int paymentStatus;
 	
+	@Column(name = "paymentstatustitle")
 	private String paymentStatusTitle;
 
+	@Column(name = "shipmentcharges")
 	private int shipmentCharges;
 
+	@Column(name = "totalamount")
 	private int totalAmount;
 
+	@Column(name = "totalitems")
 	private int totalItems;
 
 	public Order() {
@@ -48,7 +60,7 @@ public class Order {
 	}
 
 	public Order(int orderId, String address, BigInteger contact, String email, int itemsSubTotal, String name,
-			Date orderDate, String orderStatus, int paymentMethod, String paymentMethodTitle, int paymentStatus,
+			LocalDate orderDate, String orderStatus, int paymentMethod, String paymentMethodTitle, int paymentStatus,
 			String paymentStatusTitle, int shipmentCharges, int totalAmount, int totalItems) {
 		super();
 		this.orderId = orderId;
@@ -116,11 +128,11 @@ public class Order {
 		this.name = name;
 	}
 
-	public Date getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
 

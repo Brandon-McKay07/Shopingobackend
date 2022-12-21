@@ -1,29 +1,31 @@
 package com.cbfsd.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-
 
 @Entity
 public class Category {
 
 	@Id
+	@Column(name = "categoryid")
 	private int categoryId;
 
 	private boolean active;
 
+	@Column(name = "addedon")
+	private LocalDate addedOn;
 
-	private Date addedOn;
-
-	
+	@Column(name = "categorydescription")
 	private String categoryDescription;
 
+	@Column(name = "categoryimageurl")
 	private String categoryImageUrl;
 
+	@Column(name = "categoryname")
 	private String categoryName;
 
 
@@ -36,7 +38,7 @@ public class Category {
 	}
 
 
-	public Category(int categoryId, boolean active, Date addedOn, String categoryDescription, String categoryImageUrl,
+	public Category(int categoryId, boolean active, LocalDate addedOn, String categoryDescription, String categoryImageUrl,
 			String categoryName, List<Product> products) {
 		super();
 		this.categoryId = categoryId;
@@ -69,12 +71,12 @@ public class Category {
 	}
 
 
-	public Date getAddedOn() {
+	public LocalDate getAddedOn() {
 		return addedOn;
 	}
 
 
-	public void setAddedOn(Date addedOn) {
+	public void setAddedOn(LocalDate addedOn) {
 		this.addedOn = addedOn;
 	}
 

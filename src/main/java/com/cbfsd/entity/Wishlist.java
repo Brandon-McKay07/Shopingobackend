@@ -1,5 +1,6 @@
 package com.cbfsd.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,6 +9,7 @@ public class Wishlist {
 
 	
 	@Id
+	@Column(name = "wishlistid")
 	private int wishListId;
 
 	

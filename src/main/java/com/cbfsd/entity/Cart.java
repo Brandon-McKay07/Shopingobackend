@@ -1,5 +1,6 @@
 package com.cbfsd.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +8,7 @@ import javax.persistence.Id;
 public class Cart {
 
 	@Id
+	@Column(name = "cartid")
 	private int cartId;
 	
 	private int quantity;
