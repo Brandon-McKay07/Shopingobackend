@@ -3,13 +3,12 @@ package com.cbfsd.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cbfsd.repository.ProductRepository;
+import com.cbfsd.repository.CategroriesRepository;
 
 @Service
-public class ProductService {
+public class CategoriesService {
 
-	
 	@Autowired
-	ProductRepository productRepsoitory;
+	CategroriesRepository categoryRepository;
 	
 }

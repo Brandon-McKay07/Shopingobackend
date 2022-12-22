@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cbfsd.service.ProductService;
+import com.cbfsd.service.ShipmentsService;
 
 @RestController
-@RequestMapping("product")
-public class ProductController {
+@RequestMapping("shipment")
+public class ShipmentsController {
 
+	
 	@Autowired
-	ProductService productService;
+	ShipmentsService shipmentService;
 	
 }
