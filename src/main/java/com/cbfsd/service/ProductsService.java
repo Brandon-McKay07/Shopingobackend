@@ -53,4 +53,26 @@ public class ProductsService {
 		}
 	}
 	
+	
+	public String deleteProductUsingId(int productid) {
+		Optional<Product> result = productsRepository.findById(productid);// USING pk
+		if(result.isPresent()) {
+			Product pp	 = result.get();
+			productsRepository.deleteById(pp.getProductId());
+			return "Product details deleted successfully";
+		}else {
+			return "Product not present";
+		}
+	}
+	
+	public String deleteAllProduct() {
+		productsRepository.deleteAll();
+		return "Add product deleted";
+	}
+	
+	
+	public List<Product> findProductByPrice(int price){
+		return productsRepository.searchProductByPrice(price);
+	}
+	
 }
